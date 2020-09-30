@@ -7,7 +7,6 @@ def create_app():
     app = Flask(__name__)
     app.config.from_pyfile('config.py')
     db.init_app(app)
-    app = Flask(__name__)
     @app.route('/index')
     @app.route('/')
     def index():
@@ -20,5 +19,5 @@ def create_app():
 
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+#if __name__ == '__main__':
+#    app.run(debug=True)
