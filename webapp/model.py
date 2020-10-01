@@ -6,8 +6,8 @@ db = SQLAlchemy()
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), unique=True, nullable=False)
-    email = db.Column(db.String, unique=True, nullable=False)
-    psw = db.Column(db.String(500), nullable=False)
+    email = db.Column(db.String(200), unique=True, nullable=False)
+    psw = db.Column(db.String(200), nullable=False)
     date = db.Column(db.DateTime, default=datetime.utcnow)
     
     def __repr__(self):
@@ -15,8 +15,19 @@ class Users(db.Model):
 
 class Objects(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    description = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.String(200), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     img = db.Column(db.LargeBinary, nullable=False)
+    last_bet = db.Column(db.Integer, nullable=False)
+    customer_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    
     def __repr__(self):
         return f'<objects {self.id}>'
+
+class Images(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    object_id = db.Column(db.Integer, db.ForeignKey('objects.id'))
+    link  = db.Column(db.String, unique=True, nullable=False)
+
+    def __repr__(self):
+        return f'<images {self.id}>'
