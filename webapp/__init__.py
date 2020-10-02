@@ -10,7 +10,7 @@ def create_app():
     @app.route('/index')
     @app.route('/')
     def index():
-        return render_template('index.html', title='Villas')
+        return render_template('index.html', title='Real Estate Selling project by M.Knyazev & A.Petrov')
 
     @app.route('/registration')
     def registration():
@@ -18,6 +18,6 @@ def create_app():
     return app
 
 
-
+#set FLASK_APP=webapp && set FLASK_ENV=development && set FLASK_DEBUG=1 && flask run
 #if __name__ == '__main__':
 #    app.run(debug=True)
