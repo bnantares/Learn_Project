@@ -17,7 +17,7 @@ def create_app():
         return render_template('registration.html', title='Registration')
     return app
 
-
+#Test
 #set FLASK_APP=webapp && set FLASK_ENV=development && set FLASK_DEBUG=1 && flask run
 #if __name__ == '__main__':
 #    app.run(debug=True)
