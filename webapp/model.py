@@ -9,6 +9,7 @@ class Users(db.Model):
     email = db.Column(db.String(200), unique=True, nullable=False)
     psw = db.Column(db.String(200), nullable=False)
     date = db.Column(db.DateTime, default=datetime.utcnow)
+    role = db.Column(db.String(10), index=True)
     
     def __repr__(self):
         return f'<users {self.id}>'
@@ -18,6 +19,7 @@ class Objects(db.Model):
     description = db.Column(db.String(200), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     img = db.Column(db.LargeBinary, nullable=False)
+    starting price = db.Column(db.Integer, nullable=False)
     last_bet = db.Column(db.Integer, nullable=False)
     customer_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     
