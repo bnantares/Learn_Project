@@ -11,13 +11,14 @@
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://m.w3newbie.com/you-tube.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
 <div class="container-fluid">
-	<a class="navbar-brand" href="#"><img src="img/estate_logo_1.jpg"></a>	
+	<a class="navbar-brand" href="#"><img src="static/img/estate_logo_1.jpg"></a>	
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 	data-target="#navbarResponsive">
 		<span class="navbar-toggler-icon"></span>
@@ -54,7 +55,7 @@
 </ul>
 <div class="carousel-inner">
 	<div class="carousel-item active">
-		<img src="img/estate_backgroud.jpg">
+		<img src="static/img/estate_backgroud.jpg">
 		<div class="carousel-caption">
 			<h1 class="display-2">Жилье твоей мечты</h1>
 			<h3>Аукцион элитной недвижимости</h3>
@@ -63,10 +64,10 @@
 		</div>
 	</div>
 	<div class="carousel-item">
-		<img src="img/real_estate_2.jpg">
+		<img src="static/img/real_estate_2.jpg">
 	</div>
 	<div class="carousel-item">
-		<img src="img/real_estate_1.jpg">
+		<img src="static/img/real_estate_1.jpg">
 	</div>
 </div>
 </div>
@@ -100,17 +101,17 @@
 <div class="container-fluid padding">
 <div class="row text-center padding">
 	<div class="col-xs-12 col-sm-6 col-md-4">
-		<img class="house-exmp" src="img/house_1.jpg">
+		<img class="house-exmp" src="static/img/house_1.jpg">
 		<h3>Дома</h3>
 		<p>Классические варианты для тех, кто ценит гармонию</p>
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-4">
-		<img class="house-exmp" src="img/house_3.jpg">
+		<img class="house-exmp" src="static/img/house_3.jpg">
 		<h3>Виллы</h3>
 		<p>Роскошь и размер для привыкших жить с размахом</p>
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-4">
-		<img class="house-exmp" src="img/house_2.jpg">
+		<img class="house-exmp" src="static/img/house_2.jpg">
 		<h3>Пентхаусы</h3>
 		<p>Уникальные апартаменты для ищущих уединения в городских джунглях</p>
 	</div>
@@ -129,7 +130,7 @@
 		<a href="#" class="btn btn-primary">Узнать больше</a></a>
 	</div>
 	<div class="col-lg-6">
-		<img src="img/estate_desk.jpg" class="img-fluid">
+		<img src="static/img/estate_desk.jpg" class="img-fluid">
 	</div>
 </div>
 </div>
@@ -160,7 +161,7 @@
 <div class="row padding">
 	<div class="col-md-4">
 		<div class="card">
-			<img class="card-img-top" src="img/team1.png">
+			<img class="card-img-top" src="static/img/team1.png">
 			<div class="card-body">
 				<h4 class="card-title">Василий</h4>
 				<p class="card-text">Эксперт по продаже элитной недвижимости с более чем 20 годами стажа.</p>
@@ -170,7 +171,7 @@
 
 	<div class="col-md-4">
 		<div class="card">
-			<img class="card-img-top" src="img/team2.png">
+			<img class="card-img-top" src="static/img/team2.png">
 			<div class="card-body">
 				<h4 class="card-title">Яна</h4>
 				<p class="card-text">Дизайнер с опытом более 5 лет. Поможет оформить ваше обявление в лучшем виде.</p>
@@ -180,7 +181,7 @@
 
 	<div class="col-md-4">
 		<div class="card">
-			<img class="card-img-top" src="img/team3.png">
+			<img class="card-img-top" src="static/img/team3.png">
 			<div class="card-body">
 				<h4 class="card-title">Михаил/Антон</h4>
 				<p class="card-text">Разработчик с 3.5 неделями опыта. Постарается не уронить сайт пока вы продаете/покупаете дом</p>
