@@ -20,6 +20,7 @@ class Objects(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     img = db.Column(db.LargeBinary, nullable=False)
     starting_price = db.Column(db.Integer, nullable=True)
+    last_bet = db.Column(db.Integer, nullable=True)
     customer_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     
     def __repr__(self):
