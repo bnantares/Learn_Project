@@ -12,12 +12,11 @@ def create_app():
     def index():
         return render_template('index.html', title='Real Estate Selling project by M.Knyazev & A.Petrov')
 
-    @app.route('/registration')
+    @app.route('/login')
     def registration():
-        return render_template('registration.html', title='Registration')
+        return render_template('login.html', title='Авторизация')
     return app
 
-#Test
 #set FLASK_APP=webapp && set FLASK_ENV=development && set FLASK_DEBUG=1 && flask run
 #if __name__ == '__main__':
 #    app.run(debug=True)
