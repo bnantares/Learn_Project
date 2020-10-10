@@ -151,7 +151,6 @@
 				<a class="nav-link" href="#">Домой</a>
 			</li>
 			<li class="nav-item">
-				
 				<a class="nav-link" href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Войти</a>
 			</li>
 			<li class="nav-item">
@@ -168,6 +167,46 @@
 
 </div>	
 </nav>
+
+<div id="id01" class="modal">
+  
+	<form class="modal-content animate" action="/action_page.php" method="post">
+	  <div class="imgcontainer">
+		<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+		<img src="img_avatar2.png" alt="Avatar" class="avatar">
+	  </div>
+  
+	  <div class="container">
+		<label for="uname"><b>Логин</b></label>
+		<input type="text" placeholder="Введите имя" name="uname" required>
+  
+		<label for="psw"><b>Пароль</b></label>
+		<input type="password" placeholder="Введите пароль" name="psw" required>
+		  
+		<button type="submit">Войти</button>
+		<label>
+		  <input type="checkbox" checked="checked" name="remember"> Запомнить меня
+		</label>
+	  </div>
+  
+	  <div class="container" style="background-color:#f1f1f1">
+		<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Отмена</button>
+		<span class="psw">Забыли <a href="#">пароль?</a></span>
+	  </div>
+	</form>
+</div>
+
+<script>
+	// Get the modal
+	var modal = document.getElementById('id01');
+	
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+</script>
 
 <!--- Image Slider -->
 <div id="slides" class="carousel slide" data-ride="carousel">
@@ -302,7 +341,7 @@
 			<img class="card-img-top" src="static/img/team3.png">
 			<div class="card-body">
 				<h4 class="card-title">Михаил/Антон</h4>
-				<p class="card-text">Разработчик с 3.5 неделями опыта. Постарается не уронить сайт пока вы продаете/покупаете дом</p>
+				<p class="card-text">Разработчики с 3.5 неделями опыта. Постарается не уронить сайт пока вы продаете/покупаете дом</p>
 			</div>
 		</div>
 	</div>
