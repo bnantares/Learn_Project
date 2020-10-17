@@ -32,9 +32,9 @@ def create_app():
 
     return app
 
-    @app.route('/lots')
-    def lots():
-        return render_template('lots.html', title='Your Dreamhouse Lots')
+    # @app.route('/lots')
+    # def lots():
+    #     return render_template('lots.html', title='Your Dreamhouse Lots')
 
 #Test
 #set FLASK_APP=webapp && set FLASK_ENV=development && set FLASK_DEBUG=1 && flask run
