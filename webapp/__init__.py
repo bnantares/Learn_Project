@@ -1,6 +1,6 @@
 from flask_login import LoginManager
 from flask_migrate import Migrate
-from flask import Flask, render_template, flash, redirect, url_for
+from flask import Flask
 
 from webapp.db import db
 from webapp.villa.views import blueprint as villa_blueprint
@@ -10,6 +10,7 @@ from webapp.user.views import blueprint as user_blueprint
 from webapp.image.models import Image
 from webapp.object.models import Object
 from webapp.user.models import User
+
 
 def create_app():
     app = Flask(__name__)
@@ -31,4 +32,3 @@ def create_app():
         return User.query.get(user_id)
 
     return app
-
