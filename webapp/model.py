@@ -19,7 +19,11 @@ class Objects(db.Model):
     description = db.Column(db.String(200), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     img = db.Column(db.LargeBinary, nullable=False)
+<<<<<<< HEAD
+    starting_price = db.Column(db.Integer, nullable=False)
+=======
     starting price = db.Column(db.Integer, nullable=False)
+>>>>>>> cad458583675144aa19dbb93739cd672fcc46084
     last_bet = db.Column(db.Integer, nullable=False)
     customer_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     
