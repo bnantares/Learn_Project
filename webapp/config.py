@@ -1,7 +1,8 @@
 from datetime import timedelta
 import os
 
-basedir = os.path.abspath(os.path.dirname(__file__)) #абсолютный путь до этой папки
+# абсолютный путь до этой папки
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, '..', 'webapp.db')
 

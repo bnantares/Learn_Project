@@ -7,6 +7,7 @@ from webapp.user.models import User
 
 blueprint = Blueprint('user', __name__, url_prefix='/users')
 
+
 @blueprint.route('/login')
 def login():
     if current_user.is_authenticated:
@@ -16,6 +17,7 @@ def login():
     login_form = LoginForm()
     return render_template('user/login.html', page_title=title, form=login_form)
 
+
 @blueprint.route('/process-login', methods=['POST'])
 def process_login():
     form = LoginForm()
@@ -23,17 +25,19 @@ def process_login():
         user = User.query.filter_by(username=form.username.data).first()
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
-            
+
             return redirect(url_for('/.index'))
 
     flash('Неправильное имя пользователя или пароль')
     return redirect(url_for('/.index'))
+
 
 @blueprint.route('/logout')
 def logout():
     logout_user()
     flash('Вы вышли')
     return redirect(url_for('/.index'))
+
 
 @blueprint.route('/register')
 def register():
@@ -42,6 +46,7 @@ def register():
     form = RegistrationForm()
     title = "Регистрация"
     return render_template('user/registration.html', page_title=title, form=form)
+
 
 @blueprint.route('/process-reg', methods=['POST'])
 def process_reg():
