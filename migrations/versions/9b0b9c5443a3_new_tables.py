@@ -21,9 +21,9 @@ def upgrade():
     op.create_table('object',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('description', sa.String(length=200), nullable=False),
-    sa.Column('img', sa.String(length=1000), nullable=False),
+    sa.Column('img', sa.LargeBinary, nullable=False),
     sa.Column('email', sa.String(length=50), nullable=False),
-    sa.Column('starting_price', sa.String(length=1000), nullable=True),
+    sa.Column('starting_price', sa.String(length=100), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('user',
