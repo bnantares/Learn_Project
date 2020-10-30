@@ -33,14 +33,16 @@
                 </li>
             {% if current_user.is_authenticated %}
             <li class="nav-item">
-              <span class="nav-link">Пользователь {{ current_user.username }}</span>
+              <span class="nav-link">{{ current_user.username }}</span>
             </li>
             {% if current_user.is_admin %}
             <li class="nav-item">
-              <a href="{{ url_for('admin.admin_index') }}" class="nav-link">Панель управления</a>
+              <a href="{{ url_for('admin.admin_index') }}" class="nav-link">Управление</a>
             </li>
             {% endif %}
-                
+			<li class="nav-item">
+				<a class="nav-link" href="{{ url_for('lots.adding_lots') }}">Add лот</a>
+			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="{{ url_for('user.logout') }}">Выйти</a>
 				</li>
