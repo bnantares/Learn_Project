@@ -16,6 +16,10 @@
             <form action="{{ url_for('lots.process_add') }}" method="post">
                 {{ form.hidden_tag() }}
             <div class="form-group" >
+                {{ form.object_name.label }}<br>
+                {{ form.object_name() }}
+            </div>
+            <div class="form-group" >
                 {{ form.description.label }}<br>
                 {{ form.description() }}
             </div>

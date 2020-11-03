@@ -10,7 +10,13 @@ blueprint = Blueprint('lots', __name__, url_prefix='/lots')
 @blueprint.route('/')
 def lots():
     page_title = "Лоты на продажу"
-    return render_template('object/lots.html', page_title=page_title)
+    object_list = Object.query.all()
+    #object_name = Object.object_name
+    #object_description = Object.description
+    #object_img = Object.img
+    #object_starting_price = Object.starting_price
+    #object_email = Object.email
+    return render_template('object/lots.html', object_list=object_list, page_title=page_title) #object_name=object_name, object_description=object_description, object_img=object_img, object_starting_price=object_starting_price, object_email=object_email)
 
 
 @blueprint.route('/adding-lots')
@@ -24,7 +30,7 @@ def adding_lots():
 def process_add():
     form = AddingLotForm()
     if form.validate_on_submit():
-        new_object = Object(description=form.description.data, starting_price=form.starting_price.data ,email=form.email.data, img=form.img.data)
+        new_object = Object(object_name=form.object_name.data, description=form.description.data, starting_price=form.starting_price.data, email=form.email.data, img=form.img.data)
         db.session.add(new_object)
         db.session.commit()
         flash('Вы успешно добавили лот')
