@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from PIL import Image
 from wtforms import StringField, SubmitField, MultipleFileField, FileField
+from wtforms.validators import Email
 
 
 class AddingLotForm(FlaskForm):
@@ -11,6 +11,6 @@ class AddingLotForm(FlaskForm):
     img = FileField('Фото', render_kw={"class": "form-control-file"})
     starting_price = StringField('Цена', render_kw={"class": "form-control"})
     email = StringField(
-        'Электронная почта', render_kw={"class": "form-control"}
+        'Электронная почта', validators=[Email('Некорректный email')], render_kw={"class": "form-control"}
     )
     submit = SubmitField('Отправить!', render_kw={"class": "btn btn-success"})
