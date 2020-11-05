@@ -87,6 +87,10 @@ footer {
   color: #d5d5d5;
   padding-top: 2rem;
 }
+.boldCell {
+  font-weight: 600;
+  width: 200;
+}
 
 /*---Media Queries --*/
 @media (max-width: 992px) {

@@ -9,24 +9,22 @@
 <body>
     <!-- Первый лот -->
 {% for obj in object_list %}
-    <div class="lot">
+<div class="lot">
     <table border="1", cellpadding="15", align="center", width="100%">
     <tr>
-        <td >
-            {{  obj.name }}
+        <td rowspan="3", width="400">
+            <img src="/uploads/{{ obj.id }}">
         </td>
-        <td>
-            {{  obj.description }}
-        </td>
-        <td>{{  obj.img }}</td>
+        <td width="200", style="font-weight: bold">{{ obj.object_name }}</td>
+        <td>{{ obj.description }}</td>
     </tr>
     <tr>
-        <td>{{  obj.starting_price }}</td>
-        <td>{{  obj.email }}</td>
+        <td><b>Стартовая цена</b></td>
+        <td>{{ obj.starting_price }}</td>
     </tr>
     <tr>
-        <td>Ячейка 6</td>
-        <td>Ячейка 7</td>
+        <td><b>Контакт продавца</b></td>
+        <td>{{ obj.email }}</td>
     </tr>
     </table>
 

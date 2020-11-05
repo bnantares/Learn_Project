@@ -1,6 +1,7 @@
 from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask import Flask
+from flask import send_from_directory
 
 from webapp.db import db
 from webapp.villa.views import blueprint as villa_blueprint
@@ -12,10 +13,12 @@ from webapp.image.models import Image
 from webapp.object.models import Object
 from webapp.user.models import User
 
+UPLOAD_FOLDER = './uploads'
 
 def create_app():
     app = Flask(__name__)
     app.config.from_pyfile('config.py')
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
     db.init_app(app)
     migrate = Migrate(app, db)
 
@@ -32,4 +35,8 @@ def create_app():
     def load_user(user_id):
         return User.query.get(user_id)
 
+    @app.route('/uploads/<filename>')
+    def uploaded_file(filename):
+        return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+        
     return app

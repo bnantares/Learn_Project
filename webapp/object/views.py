@@ -1,3 +1,4 @@
+import os
 from flask import Blueprint, render_template, redirect, url_for, flash
 from webapp.object.forms import AddingLotForm
 from webapp.db import db
@@ -6,6 +7,7 @@ from webapp.user.models import User
 
 blueprint = Blueprint('lots', __name__, url_prefix='/lots')
 
+UPLOAD_FOLDER = './webapp/uploads'
 
 @blueprint.route('/')
 def lots():
@@ -30,9 +32,12 @@ def adding_lots():
 def process_add():
     form = AddingLotForm()
     if form.validate_on_submit():
-        new_object = Object(object_name=form.object_name.data, description=form.description.data, starting_price=form.starting_price.data, email=form.email.data, img=form.img.data)
+        new_object = Object(object_name=form.object_name.data, description=form.description.data, starting_price=form.starting_price.data, email=form.email.data)
         db.session.add(new_object)
         db.session.commit()
+        file_path = os.path.join(UPLOAD_FOLDER, str(new_object.id))
+        form.img.data.save(file_path)
+
         flash('Вы успешно добавили лот')
         return redirect(url_for('/.index'))
     else:
