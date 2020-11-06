@@ -23,8 +23,13 @@
         <td>{{ obj.starting_price }}</td>
     </tr>
     <tr>
+        {% if current_user.is_authenticated %}
         <td><b>Контакт продавца</b></td>
         <td>{{ obj.email }}</td>
+        {% else %}
+        <td><b>Контакт продавца</b></td>
+        <td>Чтобы увидеть контакты <a href="{{ url_for('user.login') }}">войдите</a></td>
+        {% endif %}
     </tr>
     </table>
 
